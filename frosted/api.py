@@ -72,7 +72,7 @@ def check_path(filename, reporter=modReporter.Default, **setting_overrides):
     """Check the given path, printing out any warnings detected."""
     try:
         with open(filename, 'U') as f:
-            codestr = f.read() + '\n'
+            codestr = f.read()
     except UnicodeError:
         reporter.unexpected_error(filename, 'problem decoding source')
         return 1
